@@ -2,11 +2,11 @@ import React from 'react';
 import Paper from '@mui/material/Paper';
 import Grid from '@mui/material/Grid';
 
-const TourCard = () => {
+const TourCard = ({tour}) => {
     return (
-        <Grid item xs={4}>
+        <Grid item xs={3}>
             <Paper elevation={3} >
-                TourCard
+                {tour.name}
             </Paper>
         </Grid>
         

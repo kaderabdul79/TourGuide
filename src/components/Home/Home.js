@@ -2,26 +2,43 @@ import React, { useEffect, useState } from 'react';
 import TourCard from './TourCard/TourCard';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
+import Typography from '@mui/material/Typography'
 
 const Home = () => {
-    const [tours,setTours] = useState({})
+    const [cities,setCities] = useState([])
 
     useEffect(()=>{
         fetch('./data.json')
         .then(res => res.json())
-        .then(data => console.log(data))
-
+        .then(data => setCities(data))
     },[])
-
+   
     return (
         <div>
-            this is home
             <Container>
-                <Grid container spacing={2}>
-                    <TourCard></TourCard>
+                <Grid container spacing={1}>
+                    {
+                        cities.map(city => 
+                        <>
+                            <Typography
+                                variant="h4"
+                                component="h2"
+                                marginBottom={3}
+                                marginTop={5}
+                            >
+                                {city.name}
+                            </Typography>
+                            <Grid container spacing={5}>
+                                {city.tours.map((tour) => (
+                                <TourCard tour={tour} />
+                                ))}
+                            </Grid>
+                        </>
+                    )
+                }
+                    
                 </Grid>
             </Container>
-            
         </div>
     );
 };
