@@ -25,12 +25,13 @@ const Home = () => {
                                 component="h2"
                                 marginBottom={3}
                                 marginTop={5}
+                                key={city.id}
                             >
                                 {city.name}
                             </Typography>
                             <Grid container spacing={5}>
                                 {city.tours.map((tour) => (
-                                <TourCard tour={tour} />
+                                <TourCard key={tour.id} tour={tour} />
                                 ))}
                             </Grid>
                         </>
