@@ -5,8 +5,18 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Rating from '@mui/material/Rating';
 import { Button } from '@mui/material';
+import { useHistory } from 'react-router-dom';
 
 const TourCard = ({tour}) => {
+
+    // const history = useHistory()
+    
+    // const goForBoking = () => {
+    //     const id = tour.id
+    //onClick={goForBoking}
+    //     history.push(`/booking/${id}`)
+    //     // console.log(id)
+    // }
     return (
         <Grid item xs={3}>
             <Paper elevation={3} >
@@ -21,9 +31,7 @@ const TourCard = ({tour}) => {
                             Price : {tour.price}
                         </Typography>
                     </Box>
-                    <Button style={{marginBottom: '8px'}} onClick={() => {
-                         alert('clicked');
-                        }} 
+                    <Button style={{marginBottom: '8px'}}  
                         variant="contained">
                             Book Now
                     </Button>

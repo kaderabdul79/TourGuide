@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import TourCard from './TourCard/TourCard';
 import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography'
+import TourCard from '../TourCard/TourCard';
 
-const Home = () => {
+const Cities = () => {
     const [cities,setCities] = useState([])
 
     useEffect(()=>{
@@ -44,4 +44,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default Cities;
